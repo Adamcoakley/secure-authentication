@@ -15,8 +15,13 @@ include 'config.php';
         $number    = preg_match('@[0-9]@', $password);
         $specialChars = preg_match('@[^\w]@', $password);
 
+        //check to see if the email exists in database
+        $checkEmail = mysqli_query($connection, "SELECT * FROM users WHERE email = '".$_POST['email']."'");
+        if(mysqli_num_rows($checkEmail)) {
+            $emailDuplicate = true;
+        } 
         //error output messages for not meeting the password requirments
-        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+        else if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
             $error = true;
         } 
         else if($password != $confirm_password){
@@ -28,6 +33,9 @@ include 'config.php';
             $secure_password = password_hash($password, PASSWORD_DEFAULT);
             $query = "insert into users (name, email, password) values ('$name', '$email', '$secure_password')";
             $result = mysqli_query($connection, $query); 
+            //header function is used to redirect the browser, users are forced to login after creating an account
+            header("Location: login.php");
+            die();
         }
     }
 ?> <!-- end of php --> 
@@ -58,6 +66,10 @@ include 'config.php';
                             <input type="email" class="email" name="email" placeholder="Email Address" value="" required>
                             <input type="password" class="password" name="password" placeholder="Password" required>
                             <input type="password" class="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                            <!-- email duplicate -->
+                            <?php if(isset($emailDuplicate)) {
+                                    echo "<p class='mycss'>The email address is already in use.</p>";
+                            } ?>
                              <!-- password rules error message -->
                             <?php if(isset($error)) {
                                     echo "<p class='mycss'>Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.</p>";
