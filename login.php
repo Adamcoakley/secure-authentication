@@ -1,3 +1,31 @@
+<?php
+include 'config.php';
+
+    //check if form is submitted 
+    if (isset($_POST['submit'])) {
+        // variables to store the submitted inputs from the form 
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        //check if the email exists
+        $result = mysqli_query($connection, "SELECT * FROM users WHERE email = '".$_POST['email']."'");
+        if(mysqli_num_rows($result)) {
+            //email exists so we store row (array) of data in variable 
+            $row = mysqli_fetch_row($result);
+            //variable to store hashed password, data returned from db in the form of [id, name, email, password]
+            $hashedPassword = $row[3];
+            //verify the matching password vs password submitted
+            if (password_verify($password, $hashedPassword)){
+                header("Location: index.php");
+            } else{
+                $noPasswordMatch = true;
+            }
+        } else{
+            $emailNotFound = true;
+        }
+    }
+?> <!-- end of php --> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +55,10 @@
                             <div class="forgot-password">
                                 <a href="login.php">Forgot password?</a>
                             </div>
+                            <!-- error: user does not exist -->
+                            <?php if(isset($noPasswordMatch)) {
+                                    echo "<p class='mycss'>The email " .$email. " and password could not be authenticated at the moment</p>";
+                            } ?>
                             <button name="submit" class="btn" type="submit">Sign in</button>
                         </form>
                         <div class="login-text">
