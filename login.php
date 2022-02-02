@@ -54,8 +54,8 @@ include 'config.php';
                             <div class="forgot-password">
                                 <a href="login.php">Forgot password?</a>
                             </div>
-                            <!-- error: user does not exist -->
-                            <?php if(isset($noPasswordMatch)) {
+                            <!-- login failed as a result of an incorrect email or password -->
+                            <?php if(isset($noPasswordMatch) || isset($emailNotFound)) {
                                     echo "<p class='mycss'>The email " .$email. " and password could not be authenticated at the moment</p>";
                             } ?>
                             <button name="submit" class="btn" type="submit">Sign in</button>
