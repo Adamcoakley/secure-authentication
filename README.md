@@ -27,6 +27,8 @@ The idea was to create a secure authentication and registration system using XAM
 ### Usage
 Ensure XAMPP is installed on your computer. Load XAMPP and start both the Apache and MySQL server.
 
-Enter: http://localhost/SecureAppsProject/login.php into your browser.
+The cloned project needs to be stored in the htdocs folder on C directory. For example: C:\XAMPP\htdocs\
+
+Enter the path of the login file into your browser followed by "localhost." For example: http://localhost/SecureAppsProject/login.php 
 
 Enjoy!
