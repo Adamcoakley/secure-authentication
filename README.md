@@ -13,5 +13,5 @@ The idea was to create a secure authentication and registration system using XAM
 ## Cross-site Scripting (XSS)
 1) All of the input fields are sanitised upon submission to prevent XSS.
 
-## Cross Site Request Forgery (CRSF)
+## Cross Site Request Forgery (CSRF)
 1) A token is used to prevent CRSF. The system checks if a token is present if a user is trying to reset a password. If not, the user is redirected to the login page.
