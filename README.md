@@ -5,7 +5,7 @@ The idea was to create a secure authentication and registration system using XAM
 ### Vulnerabilities
 ## Session Management
 1) Session variables were used to prevent users accessing pages they were not suppose to have access to.
-2) A user's session will expire after 10 minutes of activity. 
+2) A user's session will expire after 10 minutes of inactivity. 
 
 ## Brute Force
 1) A user is locked out for 3 minutes after 5 failed login attempts.
