@@ -28,7 +28,7 @@ img {
 
 p, h2 {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 p {
@@ -44,7 +44,6 @@ p {
 .btn:hover, button:hover {
     transition: 0.5s ease;
 }
-
 
 /*-- form styling --*/
 .surrounding-container {
@@ -65,7 +64,6 @@ p {
     flex-basis: 50%;
     -webkit-flex-basis: 50%;
     background: #48afbd;
-    padding: 100px 50px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     display: flex;
@@ -155,8 +153,16 @@ p {
     background: #48afbd;
 }
 
+/* form validation - success */
+.success-message {
+    font-size: 14px;
+    font-weight: medium;
+    color: #32a852; /* green */
+    padding-bottom: 10px;
+}
+
 /* form validation - error */
-.mycss {
+.error-message {
     font-size: 14px;
     font-weight: medium;
     color: red;
@@ -225,3 +231,180 @@ p {
         margin: 0px;
     }
 }
+
+
+/* authenticated users styling */
+#main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+}
+
+.home-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url("./assets/img/home.jpg") no-repeat center center/cover;
+  z-index: -1;
+}
+
+.home-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.home-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* nav bar */
+header{
+    width: 100%;
+    height: 70px;
+}
+
+h1{
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 25px;
+}
+
+ul{
+    float: right;
+    width: auto;
+    margin-top: 8px;
+}
+
+li{
+    display: inline-block;
+    padding: 15px 30px;
+}
+
+.nav-links {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links:hover {
+    color: #f7233f;
+}
+
+/* page content */
+.page-content {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    text-align: center;
+}
+
+.page-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.page-content p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* form button */
+.page-content button {
+    font-size: 18px;
+    color: #fff;
+    width: 50%;
+    background: #f7233f;
+    border: none;
+    padding: 14px 15px;
+    font-weight: 500;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+}
+
+.page-content button:hover {
+    background: #b5051d;
+}
+
+/* ADMIN page */
+.admin-content {
+    margin: 20px;
+}
+
+.admin-heading{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    float: left;
+}
+
+.admin-logout{
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+/* change password page */
+.page-content-pass {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -200px;
+    text-align: center;
+}
+
+.page-content-pass h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+/* form button */
+.page-content-pass button {
+    font-size: 18px;
+    color: #fff;
+    width: 50%;
+    background: #f7233f;
+    border: none;
+    padding: 14px 15px;
+    font-weight: 500;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -ms-transition: .3s ease;
+    -o-transition: .3s ease;
+}
+
+.page-content-pass button:hover {
+    background: #b5051d;
+}
+
+input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
