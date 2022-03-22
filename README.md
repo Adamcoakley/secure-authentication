@@ -15,3 +15,18 @@ The idea was to create a secure authentication and registration system using XAM
 
 ## Cross Site Request Forgery (CSRF)
 1) A token is used to prevent CRSF. The system checks if a token is present if a user is trying to reset a password. If not, the user is redirected to the login page.
+
+### Clone the project
+1) Above the list of files, click **code**.
+2) To clone the repository using HTTPS, under "Clone with HTTPS," click the copy icon.
+3) Open Git Bash.
+4) Change the current working directory to the location where you want the cloned directory.
+5) Type git clone, and then paste the URL you copied earlier. For example: git clone https://github.com/Adamcoakley/SecureAppsProject.git
+6) Press enter and the clone will be created.
+
+### Usage
+Ensure XAMPP is installed on your computer. Load XAMPP and start both the Apache and MySQL server.
+
+Enter: http://localhost/SecureAppsProject/login.php into your browser.
+
+Enjoy!
