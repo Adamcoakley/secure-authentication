@@ -1,4 +1,4 @@
-# Secure Application Project
+# Secure Authentication System
 ## Description
 The idea was to create a secure authentication and registration system using XAMPP, PHP and MySQL. The application creates the underlying database on requesting the login page. 
 
@@ -21,7 +21,7 @@ The idea was to create a secure authentication and registration system using XAM
 2) To clone the repository using HTTPS, under "Clone with HTTPS," click the copy icon.
 3) Open Git Bash.
 4) Change the current working directory to the location where you want the cloned directory.
-5) Type git clone, and then paste the URL you copied earlier. For example: git clone https://github.com/Adamcoakley/SecureAppsProject.git
+5) Type git clone, and then paste the URL you copied earlier. For example: git clone https://github.com/Adamcoakley/secure-authentication.git
 6) Press enter and the clone will be created.
 
 ## Usage
